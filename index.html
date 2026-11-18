@@ -79,8 +79,8 @@
     }
 
     header {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       height: 76px;
     }
@@ -106,31 +106,16 @@
       color: var(--accent);
     }
 
-    .main-nav {
+    .header-actions {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
     }
 
-    .main-nav a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      transition: 180ms ease;
-    }
-
-    .main-nav a:hover {
-      color: var(--text);
-    }
-
-    .header-actions {
-      justify-self: end;
-    }
-
-    .icon-button, .lang-button {
-      display: inline-grid;
-      height: 42px;
-      place-items: center;
+    .icon-button,
+    .lang-button {
+      height: 40px;
+      box-sizing: border-box;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
@@ -140,7 +125,9 @@
     }
 
     .icon-button {
-      width: 42px;
+      display: inline-grid;
+      width: 40px;
+      place-items: center;
     }
 
     .lang-button {
@@ -149,7 +136,7 @@
       justify-content: center;
       gap: 5px;
       min-width: 82px;
-      padding-inline: 10px;
+      padding: 0 14px;
       font-family: inherit;
       font-size: 12px;
       font-weight: 700;
@@ -194,7 +181,8 @@
       width: 460px;
       height: 460px;
       border-radius: 50%;
-      background: rgba(110, 231, 183, 0.055);
+      background: rgba(51, 225, 237, 0.055);
+      filter: blur(120px);
       pointer-events: none;
       transform: translateY(-50%);
     }
@@ -446,16 +434,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 820px) {
-      .shell { width: min(100% - 32px, 680px); }
-      header { grid-template-columns: 1fr auto; }
-      .main-nav { display: none; }
-      main { align-items: start; }
-      .hero { grid-template-columns: 1fr; }
-      .profile-card { min-height: 360px; }
-      h1 { max-width: 620px; }
-    }
-
     @media (max-width: 520px) {
       header { height: 76px; }
       main { min-height: calc(100vh - 76px); padding: 38px 0 48px; }
@@ -508,13 +486,6 @@
         <span class="brand-mark">JB</span>
         <span>Josias Brasil</span>
       </a>
-
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#about" class="active" data-i18n="about">Sobre</a>
-        <a href="#skills" data-i18n="skills">Habilidades</a>
-        <a href="#projects" data-i18n="projects">Projetos</a>
-        <a href="#contact" data-i18n="contact">Contato</a>
-      </nav>
 
       <div class="header-actions">
         <button class="lang-button" id="langToggle" type="button" aria-label="Change language"><span class="language-muted">PT</span> | <span class="language-active">EN</span></button>
