@@ -11,17 +11,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #101419;
-      --bg-soft: #171c22;
-      --surface: rgba(255, 255, 255, 0.055);
-      --surface-hover: rgba(255, 255, 255, 0.09);
-      --border: rgba(255, 255, 255, 0.09);
-      --text: #f3f6f8;
-      --muted: #a5adb7;
-      --accent: #64d8a7;
-      --accent-strong: #86e3bd;
-      --accent-soft: rgba(100, 216, 167, 0.13);
-      --blue: #79a8ff;
+      --bg: #0A0F12;
+      --bg-soft: #10171B;
+      --surface: rgba(16, 22, 26, 0.78);
+      --surface-hover: rgba(16, 22, 26, 0.92);
+      --border: rgba(51, 225, 237, 0.16);
+      --text: #FFFFFF;
+      --muted: #AAB5BA;
+      --accent: #33E1ED;
+      --accent-strong: #00F2FF;
+      --accent-soft: rgba(51, 225, 237, 0.12);
+      --blue: #79A8FF;
       --radius: 22px;
     }
 
@@ -35,9 +35,10 @@
       overflow-x: hidden;
       font-family: "DM Sans", sans-serif;
       color: var(--text);
+      background-color: #0A0F12;
       background-image:
-        linear-gradient(135deg, rgba(10, 15, 18, 0.92), rgba(10, 15, 18, 0.82)),
-        url("fundo.jpg");
+        linear-gradient(135deg, rgba(10, 15, 18, 0.88), rgba(10, 15, 18, 0.85)),
+        url("fundo.jpeg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -164,7 +165,7 @@
     }
 
     .icon-button:hover, .lang-button:hover {
-      border-color: rgba(100, 216, 167, 0.34);
+      border-color: rgba(51, 225, 237, 0.34);
       background: var(--surface-hover);
       transform: translateY(-2px);
     }
@@ -216,7 +217,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 18px rgba(100, 216, 167, 0.7);
+      box-shadow: 0 0 18px rgba(51, 225, 237, 0.7);
     }
 
     h1 {
@@ -270,52 +271,40 @@
 
     .button-primary {
       background: var(--accent);
-      color: #102119;
-      box-shadow: 0 12px 36px rgba(100, 216, 167, 0.13);
+      color: #08191B;
+      box-shadow: 0 12px 36px rgba(51, 225, 237, 0.22);
     }
 
-    .button-secondary {
-      border-color: var(--border);
-      background: var(--surface);
+    .button-primary:hover {
+      background: var(--accent-strong);
+      box-shadow: 0 14px 42px rgba(0, 242, 255, 0.28);
+    }
+
+    .button-secondary,
+    .button-whatsapp {
+      border-color: rgba(51, 225, 237, 0.24);
+      background: rgba(10, 15, 18, 0.82);
       color: var(--text);
     }
 
-    .button-whatsapp {
-      border-color: var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: not-allowed;
-      opacity: 0.72;
-    }
-
+    .button-secondary:hover,
     .button-whatsapp:hover {
-      border-color: rgba(255, 255, 255, 0.16);
-      background: var(--surface-hover);
-    }
-
-    .button:hover:not(.button-whatsapp) {
-      transform: translateY(-3px);
-    }
-
-    .button-primary:hover { background: var(--accent-strong); }
-
-    .button-secondary:hover {
-      border-color: rgba(255, 255, 255, 0.16);
-      background: var(--surface-hover);
+      border-color: rgba(51, 225, 237, 0.48);
+      background: rgba(10, 15, 18, 0.94);
     }
 
     .profile-card {
       position: relative;
       min-height: 390px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(51, 225, 237, 0.18);
       border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, rgba(100, 216, 167, 0.09), transparent 50%),
-        var(--surface);
+      background: rgba(16, 22, 26, 0.80);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
       box-shadow:
-        0 28px 80px rgba(0, 0, 0, 0.18),
-        0 0 90px rgba(110, 231, 183, 0.025);
+        0 28px 80px rgba(0, 0, 0, 0.32),
+        0 0 90px rgba(51, 225, 237, 0.035);
     }
 
     .profile-card::before {
@@ -336,9 +325,11 @@
       bottom: -75px;
       width: 220px;
       height: 220px;
-      border: 1px solid rgba(100, 216, 167, 0.15);
+      border: 1px solid rgba(51, 225, 237, 0.15);
       border-radius: 50%;
-      box-shadow: 0 0 0 38px rgba(100, 216, 167, 0.025), 0 0 0 76px rgba(100, 216, 167, 0.018);
+      box-shadow:
+        0 0 0 38px rgba(51, 225, 237, 0.025),
+        0 0 0 76px rgba(51, 225, 237, 0.018);
     }
 
     .avatar {
@@ -347,7 +338,7 @@
       height: 120px;
       place-items: center;
       margin: 24px auto 22px;
-      border: 2px solid rgba(100, 216, 167, 0.42);
+      border: 2px solid rgba(51, 225, 237, 0.42);
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.12), transparent 20%),
@@ -359,7 +350,7 @@
       letter-spacing: -0.06em;
       box-shadow:
         0 18px 50px rgba(0, 0, 0, 0.22),
-        0 0 28px rgba(100, 216, 167, 0.08);
+        0 0 28px rgba(51, 225, 237, 0.08);
       object-fit: cover;
       object-position: center 28%;
     }
@@ -489,9 +480,29 @@
       justify-content: space-between;
       padding: 22px 22px 0;
     }
+
+    #cursor-glow {
+      position: fixed;
+      z-index: 0;
+      width: 600px;
+      height: 600px;
+      left: var(--cursor-x, 50vw);
+      top: var(--cursor-y, 50vh);
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle,
+        rgba(51, 225, 237, 0.055) 0,
+        rgba(51, 225, 237, 0.028) 28%,
+        rgba(51, 225, 237, 0.012) 48%,
+        transparent 72%);
+      transform: translate(-50%, -50%);
+      mix-blend-mode: screen;
+      will-change: left, top;
+    }
   </style>
 </head>
 <body>
+  <div id="cursor-glow" aria-hidden="true"></div>
   <div class="shell">
     <header>
       <a class="brand" href="#" aria-label="Página inicial">
@@ -625,9 +636,8 @@
 
     document.addEventListener("pointermove", (event) => {
       if (window.matchMedia("(pointer: coarse)").matches) return;
-      const x = event.clientX / window.innerWidth;
-      const y = event.clientY / window.innerHeight;
-      document.body.style.backgroundPosition = `${x * 10}px ${y * 10}px`;
+      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
     });
   </script>
 </body>
